@@ -16,7 +16,12 @@ export default {
         .get("http://localhost:8000/api/posts/" + this.$route.params.slug)
         .then((resp) => {
           this.post = resp.data;
-        });
+        })
+        .catch((e) => {
+          console.error(e);
+
+          this.$router.push({ name: "not-found" });
+        })
     },
     getImageUrl(post) {
       return `http://127.0.0.1:8000/storage/${post.image}`;

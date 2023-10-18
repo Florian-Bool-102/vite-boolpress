@@ -6,6 +6,7 @@ import AboutPage from "./pages/About.vue";
 import BlogPage from "./pages/Blog.vue";
 import BlogShowPage from "./pages/BlogShow.vue";
 import ContactsPage from "./pages/Contacts.vue";
+import NotFoundPage from "./pages/NotFound.vue";
 
 const routes = [
   {
@@ -29,7 +30,7 @@ const routes = [
     component: BlogShowPage,
   },
   {
-    path: "/conthasdkjahkdhjaskjdhakjdasjhdacts",
+    path: "/contatti",
     name: "contacts",
     component: ContactsPage,
   },
@@ -40,6 +41,11 @@ const routes = [
       window.location.href = "http://localhost:8000/login";
     },
   },
+  {
+    "path": "/:pathMatch(.*)*",
+    "name": "not-found",
+    "component": NotFoundPage
+  }
 ];
 
 const router = createRouter({
