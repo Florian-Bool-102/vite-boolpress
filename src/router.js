@@ -38,7 +38,7 @@ const routes = [
     path: "/login",
     name: "login",
     beforeEnter(to, from, next) {
-      window.location.href = "http://localhost:8000/login";
+      window.location.href = import.meta.env.VITE_API_URL + "/login";
     },
   },
   {

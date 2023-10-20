@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     fetchData(url) {
-      axios.get(url ?? "http://127.0.0.1:8000/api/posts", {
+      axios.get(url ?? import.meta.env.VITE_API_URL + "/api/posts", {
         params: this.search,
       })
       .then((response) => {

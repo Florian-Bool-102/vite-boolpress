@@ -13,7 +13,7 @@ export default {
       // this.$route -> rappresenta un oggetto relativo alla rotta attuale
       // console.log(this.$route);
       axios
-        .get("http://localhost:8000/api/posts/" + this.$route.params.slug)
+        .get(import.meta.env.VITE_API_URL + "/api/posts/" + this.$route.params.slug)
         .then((resp) => {
           this.post = resp.data;
         })

@@ -29,7 +29,7 @@ export default {
       // come secondo argomento della funzione POST, PUT e PATCH dobbiamo
       // passare un oggetto con i dati da inviare al server.
       axios
-        .post("http://localhost:8000/api/contacts", dataToSend)
+        .post(import.meta.env.VITE_API_URL + "/api/contacts", dataToSend)
         .then((resp) => {
           this.success = resp.data.message;
 
