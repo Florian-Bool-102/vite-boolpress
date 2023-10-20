@@ -31,7 +31,7 @@ export default {
       });
     },
     getImageUrl(post) {
-      return `http://127.0.0.1:8000/storage/${post.image}`;
+      return import.meta.env.VITE_API_URL + `/storage/${post.image}`;
     },
     formatDate(data) {
       return dayjs(data).format("DD/MM/YYYY");
